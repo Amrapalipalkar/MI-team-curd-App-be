@@ -5,7 +5,7 @@ import { getPlayers, addPlayer, getUserById, editUser, deleteUser } from '../con
 
 const router = express.Router();
 
-app.get('/', getPlayers);
+router.get('/', getPlayers);
 router.post('/add', addPlayer);
 router.get('/:id', getUserById);
 router.put('/:id', editUser);
