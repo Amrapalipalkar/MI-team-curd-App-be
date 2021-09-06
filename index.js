@@ -49,7 +49,6 @@ mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true, useFind
     console.log('Error:', error.message)
 })
 
-app.get('/', getPlayers);
 
 
 // We can do something like this or we can set it directly in the url as well
