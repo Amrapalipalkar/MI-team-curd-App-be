@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 // Step 2 ------------------->
 app.use('/users', Routes);
-app.get('/', getPlayers);
+
 
 const URL = process.env.MONGODBURL || "mongodb://localhost:27017";
 // const dotenv = require('dotenv'); //3 - but we need to tell express where to pick this port 
@@ -48,6 +48,8 @@ mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true, useFind
 }).catch((error) => {
     console.log('Error:', error.message)
 })
+
+app.get('/', getPlayers);
 
 
 // We can do something like this or we can set it directly in the url as well
