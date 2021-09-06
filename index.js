@@ -20,13 +20,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 // Step 2 ------------------->
 app.use('/users', Routes);
+app.get('/', getPlayers);
 
-// https://www.mongodb.com/cloud/atlas
-// const USERNAME = process.env.USERNAME;
-// const PASSWORD = process.env.PASSWORD;
-// const URL = 'mongodb+srv://user:Manrun89@cluster0.zgrax.mongodb.net/CRUDAPP?retryWrites=true&w=majority';
-// const URL = 'mongodb://user:Manrun89@cluster-first-shard-00-00.zgrax.mongodb.net:27017,cluster-first-shard-00-01.zgrax.mongodb.net:27017,cluster-first-shard-00-02.zgrax.mongodb.net:27017/CRUDAPP?ssl=true&replicaSet=atlas-dair4b-shard-0&authSource=admin&retryWrites=true&w=majority'
-// const URL = 'mongodb://user:codeforinterview@crudapp-shard-00-00.zgrax.mongodb.net:27017,crudapp-shard-00-01.zgrax.mongodb.net:27017,crudapp-shard-00-02.zgrax.mongodb.net:27017/CRUDAPP?ssl=true&replicaSet=atlas-as0xva-shard-0&authSource=admin&retryWrites=true&w=majority'
 const URL = process.env.MONGODBURL || "mongodb://localhost:27017";
 // const dotenv = require('dotenv'); //3 - but we need to tell express where to pick this port 
 // It allows you to seperate your crediantials when we work in a collaborative environment
